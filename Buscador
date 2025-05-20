@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Browser</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: flex;
+      padding: 20px;
+    }
+
+    .search-panel {
+      width: 300px;
+      margin-right: 20px;
+    }
+
+    .search-box {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .search-box input {
+      padding: 10px;
+      font-size: 16px;
+      background: #111;
+      color: white;
+      border: 2px solid #444;
+      border-radius: 5px;
+    }
+
+    .keyboard {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 5px;
+    }
+
+    .key {
+      background: #111;
+      padding: 15px 0;
+      text-align: center;
+      border-radius: 5px;
+      border: 1px solid #333;
+      cursor: pointer;
+      color: white;
+      font-size: 18px;
+      transition: 0.2s, color 0.2s;
+    }
+
+    .key:hover, .key.active {
+      background: white;
+      color: black;
+    }
+
+    .content {
+      display: flex;
+      flex: 1;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-right: 20px;
+      width: 160px;
+    }
+
+    .menu-item {
+      background: #2c2c2c;
+      padding: 10px;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: border 0.3s;
+    }
+
+    .menu-item:hover {
+      border: 5px solid #00ffff;
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+
+    .poster-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+      flex: 1;
+    }
+
+    .poster {
+      background: #222;
+      border: 2px solid transparent;
+      height: 300px;
+      transition: border 0.3s;
+    }
+
+    .poster:hover {
+      border: 2px solid #00ffff;
+    }
+
+    .poster img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .username {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .username img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="username">
+    <img src="perfil.jpg" alt="Piero" />
+    <span>Piero</span>
+  </div>
+  <div class="container">
+    <div class="search-panel">
+      <div class="search-box">
+        <label for="search">🔍 Buscar</label>
+        <input type="text" id="search" placeholder="la casa de papel _" />
+      </div>
+      <div class="keyboard">
+        <div class="key">a</div>
+        <div class="key">b</div>
+        <div class="key">c</div>
+        <div class="key">d</div>
+        <div class="key">e</div>
+        <div class="key">f</div>
+        <div class="key">g</div>
+        <div class="key">h</div>
+        <div class="key">i</div>
+        <div class="key">j</div>
+        <div class="key">k</div>
+        <div class="key">l</div>
+        <div class="key">m</div>
+        <div class="key">n</div>
+        <div class="key">ñ</div>
+        <div class="key">o</div>
+        <div class="key">p</div>
+        <div class="key">q</div>
+        <div class="key">r</div>
+        <div class="key">s</div>
+        <div class="key">t</div>
+        <div class="key">u</div>
+        <div class="key">v</div>
+        <div class="key">w</div>
+        <div class="key">x</div>
+        <div class="key">y</div>
+        <div class="key">z</div>
+        <div class="key">1</div>
+        <div class="key">2</div>
+        <div class="key">3</div>
+        <div class="key">4</div>
+        <div class="key">5</div>
+        <div class="key">6</div>
+        <div class="key">7</div>
+        <div class="key">8</div>
+        <div class="key">9</div>
+        <div class="key">0</div>
+        <div class="key">⌫</div>
+        <div class="key" style="grid-column: span 2">Buscar</div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="menu">
+        <div class="menu-item">
+          <img src="NETFLIX+.png" alt="TV en Vivo">
+        </div>
+        <div class="menu-item">
+          <img src="ON DEMAND.png" alt="On Demand">
+        </div>
+        <div class="menu-item">
+          <img src="TV VIVO.png" alt="Netflix">
+        </div>
+      </div>
+      <div class="poster-grid">
+        <div class="poster"><img src="1.jpg" alt="Poster" /></div>
+        <div class="poster"><img src="2.jpg" alt="Poster" /></div>
+        <div class="poster"><img src="3.jpg" alt="Poster" /></div>
+        <div class="poster"><img src="4.jpg" alt="Poster" /></div>
+        <div class="poster"><img src="5.jpg" alt="Poster" /></div>
+        <div class="poster"><img src="6.jpg" alt="Poster" /></div>
+        <div class="poster"><img src="7.jpg" alt="Poster" /></div>
+        <div class="poster"><img src="8.jpg" alt="Poster" /></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
