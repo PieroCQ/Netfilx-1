@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Google - Página de Inicio</title>
+  <style>
+    /* Reset y base */
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #202124;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Contenedor principal */
+    .main-container {
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+      padding: 0 20px;
+    }
+
+    /* Link para Gmail arriba a la derecha */
+    .top-right-link {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 14px;
+      color: #1a0dab;
+      text-decoration: none;
+      font-weight: 500;
+      user-select: none;
+      transition: color 0.2s;
+    }
+    .top-right-link:hover {
+      color: #4a90e2;
+      text-decoration: underline;
+    }
+
+    /* Logo estilo Google */
+    .logo {
+      font-family: "Product Sans", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 64px;
+      letter-spacing: 6px;
+      margin-bottom: 36px;
+      user-select: none;
+    }
+    .logo span {
+      display: inline-block;
+    }
+    .logo .blue { color: #4285F4; }
+    .logo .red { color: #DB4437; }
+    .logo .yellow { color: #F4B400; }
+    .logo .green { color: #0F9D58; }
+
+    /* Barra de búsqueda */
+    .search-box {
+      display: flex;
+      border: 1px solid #dfe1e5;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.2);
+      border-radius: 24px;
+      padding: 0 15px;
+      height: 44px;
+      align-items: center;
+      margin: 0 auto 36px auto;
+      max-width: 100%;
+      transition: box-shadow 0.2s ease-in-out;
+      background: #fff;
+    }
+    .search-box:focus-within {
+      box-shadow: 0 4px 8px rgb(66 133 244 / 0.6);
+      border-color: #4285f4;
+    }
+    .search-box input {
+      flex: 1;
+      border: none;
+      font-size: 16px;
+      height: 32px;
+      outline: none;
+      font-weight: 400;
+      color: #202124;
+      padding: 0 10px;
+    }
+
+    /* Botones */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+    button {
+      background-color: #f8f9fa;
+      border: 1px solid #f8f9fa;
+      border-radius: 4px;
+      color: #3c4043;
+      font-size: 14px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 1px 1px rgb(0 0 0 / 0.1);
+      transition: background-color 0.2s, border-color 0.2s;
+      user-select: none;
+    }
+    button:hover {
+      background-color: #f1f3f4;
+      border-color: #c6c6c6;
+      box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+    }
+    button:active {
+      background-color: #e8e8e8;
+      border-color: #a8a8a8;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://mail.google.com" target="_blank" rel="noopener" class="top-right-link" aria-label="Ir a Gmail">Gmail</a>
+  <div class="main-container">
+    <div class="logo" aria-label="Google">
+      <span class="blue">G</span><span class="red">o</span><span class="yellow">o</span><span class="blue">g</span><span class="green">l</span><span class="red">e</span>
+    </div>
+    <form action="https://www.google.com/search" method="GET" class="search-form" role="search" aria-label="Buscar con Google">
+      <div class="search-box">
+        <input 
+          type="text" 
+          name="q" 
+          aria-label="Buscar" 
+          autocomplete="off" 
+          autofocus
+          spellcheck="false"
+          />
+      </div>
+      <div class="buttons">
+        <button type="submit" aria-label="Buscar con Google">Buscar con Google</button>
+        <button type="button" onclick="window.location='https://www.google.com/doodles'" aria-label="Voy a tener suerte">Voy a tener suerte</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
